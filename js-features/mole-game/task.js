@@ -2,7 +2,6 @@ function getHole(index) {
     return document.getElementById(`hole${index}`)
 }
 
-let hole1 = document.getElementById('hole1');
 let dead = document.getElementById('dead');
 let lost = document.getElementById('lost');
 let counterDead = 0;
