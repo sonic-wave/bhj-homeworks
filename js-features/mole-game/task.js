@@ -7,9 +7,9 @@ let lost = document.getElementById('lost');
 let counterDead = 0;
 let counterLost = 0;
 
-
 for (let i = 1; i < 10; i++) {
     let hole = getHole(i);
+    
     hole.onclick = () => {
         if (hole.className.includes('hole_has-mole')) {
             if (counterDead === 10) {
