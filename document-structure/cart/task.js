@@ -19,19 +19,42 @@ for (let i = 0; i < decrease.length; i++) {
         }
     });
 }
-
+const arr = [];
 for (let i = 0; i < add.length; i++) {
     add[i].addEventListener('click', (e) => {
         e.preventDefault();
         const cartProduct = document.createElement('div');
-console.log(cart.contains(cartProduct.getAttribute('data-id')))
+// console.log(cart.contains(cartProduct.getAttribute('data-id')))
 
         cartProduct.classList.add('cart__product');
         cartProduct.setAttribute('data-id', product[i].getAttribute('data-id'));
         cartProduct.innerHTML = `<img class="cart__product-image" src="${cartImage[i].src}"><div class="cart__product-count">${value[i].innerHTML}</div>`;
-        if (1) {
+        
+        // if (1) {
+        //     cart.appendChild(cartProduct);
+        // }
+  
+
+        arr.push(cart);
+        arr2 = Array.from(cart);
+        console.log(arr)
+
+        const productInCart = arr.find(element => element.getAttribute('data-id') == cartProduct.getAttribute('data-id'));
+        console.log(productInCart)
+        if (productInCart) {
+            console.log('yes')
+        } else {
             cart.appendChild(cartProduct);
-            console.log(product[i].getAttribute('data-id'));
         }
+        console.log(arr.find(check));
+        console.log(check(arr[i]));
+
+
     });
 }
+
+
+
+// const productInCart = cart.find(() => cartProduct.getAttribute('data-id'));
+
+// console.log(productInCart)

@@ -5,7 +5,7 @@ hasTooltip.forEach(element => {
     
     tip.textContent = element.title;
     tip.classList.add('tooltip');
-    element.appendChild(tip);
+    element.after(tip);
 
     element.addEventListener('click', (e) => {
         e.preventDefault();
