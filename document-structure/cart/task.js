@@ -19,42 +19,27 @@ for (let i = 0; i < decrease.length; i++) {
         }
     });
 }
-const arr = [];
+
 for (let i = 0; i < add.length; i++) {
     add[i].addEventListener('click', (e) => {
         e.preventDefault();
-        const cartProduct = document.createElement('div');
-// console.log(cart.contains(cartProduct.getAttribute('data-id')))
+
+        let cartProduct = document.createElement('div');
 
         cartProduct.classList.add('cart__product');
         cartProduct.setAttribute('data-id', product[i].getAttribute('data-id'));
         cartProduct.innerHTML = `<img class="cart__product-image" src="${cartImage[i].src}"><div class="cart__product-count">${value[i].innerHTML}</div>`;
-        
-        // if (1) {
-        //     cart.appendChild(cartProduct);
-        // }
-  
 
-        arr.push(cart);
-        arr2 = Array.from(cart);
-        console.log(arr)
+        let cartProductArray = Array.from(document.getElementsByClassName('cart__product'));
+        let checkProduct = cartProduct.getAttribute('data-id');
+        let productInCart = cartProductArray.find(element => element.getAttribute('data-id') == checkProduct);
 
-        const productInCart = arr.find(element => element.getAttribute('data-id') == cartProduct.getAttribute('data-id'));
-        console.log(productInCart)
         if (productInCart) {
-            console.log('yes')
+            let cartValue = productInCart.querySelector('.cart__product-count');
+
+            cartValue.innerHTML = parseInt(cartValue.innerHTML) + parseInt(value[i].innerHTML);
         } else {
             cart.appendChild(cartProduct);
         }
-        console.log(arr.find(check));
-        console.log(check(arr[i]));
-
-
     });
 }
-
-
-
-// const productInCart = cart.find(() => cartProduct.getAttribute('data-id'));
-
-// console.log(productInCart)

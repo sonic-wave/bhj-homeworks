@@ -6,6 +6,8 @@ const tasksList = document.getElementById('tasks__list');
 button.addEventListener('click', (e) => {
     e.preventDefault();
 
+    input.value.trim();
+
     if (input.value) {
         const task = document.createElement('div');
         tasksList.appendChild(task);
