@@ -5,6 +5,7 @@ const product = document.querySelectorAll('.product');
 const add = document.querySelectorAll('.product__add');
 const cart = document.querySelector('.cart__products');
 const cartImage = document.querySelectorAll('.product__image');
+let cartProductArray = document.getElementsByClassName('cart__product');
 
 for (let i = 0; i < increase.length; i++) {
     increase[i].addEventListener('click', () => {
@@ -30,9 +31,8 @@ for (let i = 0; i < add.length; i++) {
         cartProduct.setAttribute('data-id', product[i].getAttribute('data-id'));
         cartProduct.innerHTML = `<img class="cart__product-image" src="${cartImage[i].src}"><div class="cart__product-count">${value[i].innerHTML}</div>`;
 
-        let cartProductArray = Array.from(document.getElementsByClassName('cart__product'));
         let checkProduct = cartProduct.getAttribute('data-id');
-        let productInCart = cartProductArray.find(element => element.getAttribute('data-id') == checkProduct);
+        let productInCart = Array.from(cartProductArray).find(element => element.getAttribute('data-id') == checkProduct);
 
         if (productInCart) {
             let cartValue = productInCart.querySelector('.cart__product-count');

@@ -6,9 +6,7 @@ const tasksList = document.getElementById('tasks__list');
 button.addEventListener('click', (e) => {
     e.preventDefault();
 
-    input.value.trim();
-
-    if (input.value) {
+    if (input.value.trim()) {
         const task = document.createElement('div');
         tasksList.appendChild(task);
         task.innerHTML = `<div class="task"><div class="task__title">${input.value}</div><a href="#" class="task__remove">&times;</a></div>`;
