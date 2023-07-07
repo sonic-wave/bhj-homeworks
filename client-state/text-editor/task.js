@@ -18,7 +18,7 @@ const clearButton = document.createElement('button');
 clearButton.textContent = 'Очистить содержимое';
 card.append(clearButton);
 clearButton.addEventListener('click', () => {
-    localStorage.clear();
+    localStorage.removeItem('savedText');
     textArea.value = '';
 });
 

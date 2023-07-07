@@ -35,8 +35,7 @@ form.addEventListener('submit', (e) => {
 });
 
 window.onload = () => {
-    const localId = localStorage.getItem('user_ids');
-
+    const localId = localStorage.getItem('user_id');
     if (localId) {
         welcome.classList.add('welcome_active');
         userId.textContent = localId;
